@@ -1,32 +1,16 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 
-import { getProducts } from '../services/ApiServices';
+
 import Product from './Product';
 
-export default function Products() {
+export const Products=({products,onAddToCart})=> {
 
-    const [products, setProducts] = useState([]);
-
-
-
-    useEffect(()=>{
-
-        async function fetchProducts() {
-            try {
-                const response = await  getProducts('products')
-             
-              setProducts(response.data);
-            } catch (error) {
-              console.error('Error fetching products:', error);
-            }
-          }
-      
-          fetchProducts();
-
-    },[]);
   return (
-    <div>
-      {products && products.map(product=><Product   key={product.id} product={product}  />)}
+    <div className="product-list">
+        <h2>Product List</h2>
+      <div className="products">
+      {products && products.map(product=><Product   key={product.id} product={product} onAddToCart={onAddToCart} />)}
+      </div>
     </div>
   )
 }

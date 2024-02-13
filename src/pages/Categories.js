@@ -8,21 +8,21 @@ const Categories = () => {
 
 
 
-    useEffect(()=>{
+    // useEffect(()=>{
 
-        async function fetchCategories() {
-            try {
-                const response = await  getCategories('products/categories');
+    //     async function fetchCategories() {
+    //         try {
+    //             const response = await  getCategories('products/categories');
              
-              setCategories(response.data);
-            } catch (error) {
-              console.error('Error fetching products:', error);
-            }
-          }
+    //           setCategories(response.data);
+    //         } catch (error) {
+    //           console.error('Error fetching products:', error);
+    //         }
+    //       }
       
-          fetchCategories();
+    //       fetchCategories();
 
-    },[]);
+    // },[]);
   return (
     <div>
       {categories && categories.map(cat=>

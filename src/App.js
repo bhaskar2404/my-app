@@ -1,11 +1,13 @@
-import logo from './logo.svg';
+
 import './App.css';
-import { Link, Route, Router, Routes } from 'react-router-dom';
+import { Link, Route, Routes } from 'react-router-dom';
 import Contact from './pages/Contact';
 import About from './pages/About';
 import Home from './pages/Home';
-import Products from './pages/Products';
-import Categories from './pages/Categories';
+
+
+import UserLogin from './login/UserLogin';
+import ProductCat from './pages/ProductCat';
 
 function App() {
   return (
@@ -26,8 +28,11 @@ function App() {
             <li>
               <Link to="/products">Products</Link>
             </li>
-            <li>
+            {/* <li>
               <Link to="/categories">Categories</Link>
+            </li> */}
+            <li>
+              <Link to="/login">Login</Link>
             </li>
             
             
@@ -38,10 +43,11 @@ function App() {
 
         <Routes>
         <Route exact path="/" element={<Home/>} />
-        <Route exact path='/products' element={<Products/>}/>
+        <Route exact path='/products' element={<ProductCat/>}/>
         <Route exact path="/about" element={<About />} />
         <Route exact path="/contact" element={<Contact />} />
-        <Route exact path="/categories" element={<Categories />} />
+        
+        <Route exact path="/login" element={<UserLogin/>} />
         
        
         
